@@ -1,36 +1,35 @@
-
-import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-
 import 'package:apptick/config/routes/app_router.dart';
 import 'package:apptick/services/auth_service.dart';
+import 'package:flutter/material.dart';
+ // Importar el servicio de autenticación
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
   bool _isLoading = false;
   bool _obscurePassword = true;
-
   final AuthService _authService = AuthService();  // Instancia del servicio
 
-  // Método para manejar el login del usuario
-  Future<void> _loginUser() async {
+  // Método para manejar el registro del usuario
+  Future<void> _registerUser() async {
     setState(() {
       _isLoading = true;
     });
 
     var email = _emailController.text;
     var password = _passwordController.text;
+    var name = _nameController.text;
 
     // Llamar al servicio de autenticación
-    var result = await _authService.loginUser(email, password);
+    var result = await _authService.registerUser(email, password, name);
 
     setState(() {
       _isLoading = false;
@@ -38,9 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (result['success']) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login successful! Token: ${result['token']}')),
+        SnackBar(content: Text(result['message'])),
       );
-      // Aquí puedes guardar el token y navegar a la siguiente pantalla
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(result['message'])),
@@ -58,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pop(context);
+            appRouter.pop();
           },
         ),
       ),
@@ -70,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Login',
+                'Registro',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -79,11 +77,32 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 30),
               TextFormField(
+                controller: _nameController,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  labelText: 'Nombre',
+                  labelStyle: TextStyle(color: Colors.grey[400]),
+                  filled: true,
+                  fillColor: Color(0xFF1E1E2D),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor ingresa tu nombre';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20),
+              TextFormField(
                 controller: _emailController,
                 style: TextStyle(color: Colors.white),
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: 'Tu correo Electrónico',
+                  labelText: 'Correo Electrónico',
                   labelStyle: TextStyle(color: Colors.grey[400]),
                   filled: true,
                   fillColor: Color(0xFF1E1E2D),
@@ -105,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: _obscurePassword,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
-                  labelText: 'Tu contraseña',
+                  labelText: 'Contraseña',
                   labelStyle: TextStyle(color: Colors.grey[400]),
                   filled: true,
                   fillColor: Color(0xFF1E1E2D),
@@ -138,33 +157,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   : ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(double.infinity, 50), // Botón de tamaño completo
-                        backgroundColor: Color(0xFF6C63FF),  // Color similar al de la imagen
+                        backgroundColor: Color(0xFF1E1E2D),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          _loginUser();
+                          _registerUser();
                         }
                       },
                       child: Text(
-                        'Login',
+                        'Registrar',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-              SizedBox(height: 10),
-              /*Center(
-                child: TextButton(
-                  onPressed: () {
-                    // Acción para el olvido de contraseña
-                  },
-                  child: Text(
-                    'Forgot Password',
-                    style: TextStyle(color: Colors.grey[400]),
-                  ),
-                ),
-              ),*/
             ],
           ),
         ),
