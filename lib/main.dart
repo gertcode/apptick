@@ -11,9 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
+    //SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    //SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     return MaterialApp.router(
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: false),
     );
   }
 }

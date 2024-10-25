@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginApp extends StatefulWidget {
+  const LoginApp({super.key});
+
   @override
   State<LoginApp> createState() => _LoginAppState();
 }
@@ -16,10 +18,12 @@ class _LoginAppState extends State<LoginApp> {
 }
 
 class LoginPagev extends StatelessWidget {
+  const LoginPagev({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1C1C1E),
+      backgroundColor: const Color(0xFF1C1C1E),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -29,14 +33,14 @@ class LoginPagev extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.white),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () {
                   // Acción de retroceso
                 },
               ),
             ),
-            SizedBox(height: 20.0),
-            Text(
+            const SizedBox(height: 20.0),
+            const Text(
               'Login',
               style: TextStyle(
                 color: Colors.white,
@@ -44,45 +48,45 @@ class LoginPagev extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             TextField(
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Correo Electrónico',
-                labelStyle: TextStyle(color: Colors.white54),
+                labelStyle: const TextStyle(color: Colors.white54),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white24),
+                  borderSide: const BorderSide(color: Colors.white24),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextField(
               obscureText: true,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Contraseña',
-                labelStyle: TextStyle(color: Colors.white54),
-                suffixIcon: Icon(Icons.visibility_off, color: Colors.white54),
+                labelStyle: const TextStyle(color: Colors.white54),
+                suffixIcon: const Icon(Icons.visibility_off, color: Colors.white54),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white24),
+                  borderSide: const BorderSide(color: Colors.white24),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 //primary: Color(0xFF6C63FF), // Color morado del botón
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -90,7 +94,7 @@ class LoginPagev extends StatelessWidget {
               onPressed: () {
                 // Acción de inicio de sesión
               },
-              child: Text(
+              child: const Text(
                 'Login',
                 style: TextStyle(
                   fontSize: 18.0,
@@ -98,12 +102,12 @@ class LoginPagev extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextButton(
               onPressed: () {
                 // Acción de "Forgot Password"
               },
-              child: Text(
+              child: const Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.white54),
               ),

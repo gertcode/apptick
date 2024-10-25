@@ -3,14 +3,14 @@ import 'package:apptick/services/auth_service.dart';
 import 'package:flutter/material.dart';
  // Importar el servicio de autenticación
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class NewTaskPage extends StatefulWidget {
+  const NewTaskPage({super.key});
 
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  _NewTaskPageState createState() => _NewTaskPageState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _NewTaskPageState extends State<NewTaskPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -70,7 +70,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const Text(
-                'Registro',
+                'Nueva Tarea',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -170,7 +170,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         }
                       },
                       child: const Text(
-                        'Registrar',
+                        'Crear Tarea',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

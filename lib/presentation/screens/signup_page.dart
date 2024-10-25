@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
@@ -10,7 +12,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1C1C1E),
+      backgroundColor: const Color(0xFF1C1C1E),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -20,14 +22,14 @@ class _SignUpPageState extends State<SignUpPage> {
             Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.white),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () {
                   // Acción de retroceso
                 },
               ),
             ),
-            SizedBox(height: 20.0),
-            Text(
+            const SizedBox(height: 20.0),
+            const Text(
               'Registro',
               style: TextStyle(
                 color: Colors.white,
@@ -35,61 +37,61 @@ class _SignUpPageState extends State<SignUpPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             TextField(
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Nombre',
-                labelStyle: TextStyle(color: Colors.white54),
+                labelStyle: const TextStyle(color: Colors.white54),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white24),
+                  borderSide: const BorderSide(color: Colors.white24),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextField(
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Correo Electrónico',
-                labelStyle: TextStyle(color: Colors.white54),
+                labelStyle: const TextStyle(color: Colors.white54),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white24),
+                  borderSide: const BorderSide(color: Colors.white24),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextField(
               obscureText: true,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Contraseña',
-                labelStyle: TextStyle(color: Colors.white54),
-                suffixIcon: Icon(Icons.visibility_off, color: Colors.white54),
+                labelStyle: const TextStyle(color: Colors.white54),
+                suffixIcon: const Icon(Icons.visibility_off, color: Colors.white54),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white24),
+                  borderSide: const BorderSide(color: Colors.white24),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 //primary: Colors.blueGrey[800], // Color del botón
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -97,7 +99,7 @@ class _SignUpPageState extends State<SignUpPage> {
               onPressed: () {
                 // Acción de registro
               },
-              child: Text(
+              child: const Text(
                 'Sign-up',
                 style: TextStyle(
                   fontSize: 18.0,
