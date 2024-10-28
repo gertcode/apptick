@@ -14,8 +14,8 @@ import 'package:apptick/presentation/screens/register_screen.dart';
 
 final appRouter = GoRouter(routes: [
   GoRoute(
-    path: '/dfgdfg',
-    builder: (context, state) => DashPage(),
+    path: '/vcbcvb',
+    builder: (context, state) => FirstPage(),
   ),
   GoRoute(
     path: '/register',

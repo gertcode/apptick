@@ -16,6 +16,8 @@ dependencies:
   google_fonts: ^5.0.0
   simple_circular_progress_bar: ^1.0.2
   dashed_circular_progress_bar: ^0.0.6
+  toastification: ^2.3.0
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:

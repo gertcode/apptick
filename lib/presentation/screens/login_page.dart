@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0D0D15), // Fondo oscuro
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Fondo oscuro
       appBar: AppBar(
         backgroundColor: const Color(0xFF0D0D15),
         elevation: 0,
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 30),
@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   labelText: 'Tu correo Electrónico',
                   labelStyle: TextStyle(color: Colors.grey[400]),
                   filled: true,
-                  fillColor: const Color(0xFF1E1E2D),
+                  //fillColor: const Color(0xFF1E1E2D),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide.none,
